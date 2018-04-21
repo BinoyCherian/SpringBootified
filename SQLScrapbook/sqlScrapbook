@@ -1,0 +1,23 @@
+create table login(
+	login_email varchar(50) NOT NULL UNIQUE,
+	password VARCHAR(50) NOT NULL
+)
+
+select * from LOGIN
+
+INSERT INTO LOGIN 
+VALUES ('root@springrestified.COM','root')
+
+INSERT INTO LOGIN 
+VALUES ('skillerx@springrestified.COM','root')
+
+INSERT INTO LOGIN 
+VALUES ('blackhammer@springrestified.COM','root')
+
+INSERT INTO LOGIN 
+VALUES ('holyshawarma@springrestified.COM','root')
+
+select * from LOGIN
+
+
+//to create the table

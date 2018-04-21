@@ -1,4 +1,4 @@
-package fe.epita.controllers;
+package fr.epita.springrestified.controllers;
 
 
 import org.springframework.boot.SpringApplication;
