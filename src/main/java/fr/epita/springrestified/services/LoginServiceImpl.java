@@ -2,34 +2,54 @@ package fr.epita.springrestified.services;
 
 import java.util.List;
 
-import javax.inject.Inject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import org.hibernate.SessionFactory;
-
-import fr.epita.springrestified.dao.LoginDao;
+import fr.epita.springrestified.dao.LoginRepository;
 import fr.epita.springrestified.datamodel.Login;
 
+/**
+ * The service impl for the login service.
+ * 
+ * @author raaool
+ *
+ */
+@Service
 public class LoginServiceImpl implements LoginService {
 	
-	@Inject
-	SessionFactory sf;
+	/** The login repository **/
+	final LoginRepository loginRepository;
 	
-
-	@Override
-	public boolean checkLogin(Login login) {
-
-		return false;
+	/**
+	 * The constructor
+	 * 
+	 * @param loginRepository The repository
+	 */
+	@Autowired
+	public LoginServiceImpl(LoginRepository loginRepository) {
+		this.loginRepository = loginRepository;
 	}
 
-	@Override
-	public List<Login> getLogins(Login login) {
-		
-		if(sf!=null) {
-			System.out.println("Hello");
-		}
-		
-		LoginDao dao = new LoginDao();
-		return dao.search(login);
+	/**
+	 * @see fr.epita.springrestified.services.LoginService#checkLogin(fr.epita.springrestified.datamodel.Login)
+	 */
+	public boolean checkLogin(Login login) {
+		return loginRepository.findById(login.getEmail()).isPresent();
+	}
+	
+	/**
+	 * @see fr.epita.springrestified.services.LoginService#getLogins()
+	 */
+	public List<Login> getLogins() {
+		return loginRepository.findAll();
+	}
+	
+	/**
+	 * @see fr.epita.springrestified.services.LoginService#addLogin(fr.epita.springrestified.datamodel.Login)
+	 */
+	public List<Login> addLogin(Login login) {
+		loginRepository.save(login);
+		return getLogins();
 	}
 
 }

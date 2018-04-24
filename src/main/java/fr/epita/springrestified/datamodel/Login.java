@@ -13,14 +13,12 @@ import javax.persistence.Id;
 public class Login {
 	
 	/** The e-mail */
+	@Id
 	private String email;
 	
 	/** The password */
 	private String password;
 	
-	/** The confirm password **/
-	private String confirmPassword;
-
 	/**
 	 * Gets the e-mail.
 	 * 
@@ -57,21 +55,4 @@ public class Login {
 		this.password = password;
 	}
 
-	/**
-	 * Gets the string for the confirm password.
-	 * 
-	 * @return String The password
-	 */
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	/**
-	 * Sets the confirm password. 
-	 * 
-	 * @param confirmPassword The confirm password string
-	 */
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
 }
