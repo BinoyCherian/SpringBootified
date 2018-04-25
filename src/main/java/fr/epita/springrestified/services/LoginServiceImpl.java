@@ -52,4 +52,27 @@ public class LoginServiceImpl implements LoginService {
 		return getLogins();
 	}
 
+	/**
+	 * @see fr.epita.springrestified.services.LoginService#deleteLogin(fr.epita.springrestified.datamodel.Login)
+	 */
+	public List<Login> deleteLogin(Login login) {
+		loginRepository.delete(login);
+		return getLogins();
+	}
+
+	/**
+	 * @see fr.epita.springrestified.services.LoginService#updateLogin(fr.epita.springrestified.datamodel.Login)
+	 */
+	public boolean updateLogin(Login login) {
+		
+		if(loginRepository.findById(login.getEmail()).isPresent()) {
+			addLogin(login);
+			return true;
+		}else {
+			//TODO log and return false
+			return false;
+		}
+		
+	}
+
 }

@@ -67,4 +67,25 @@ public class Restified {
 		return loginService.addLogin(login);
 	}
 
+	/**
+	 * Method to delete a login object from the repository. This method calls the underlying login service.
+	 * @param login The login object to be deleted
+	 * @return List<Login> The list of all the login objects
+	 */
+	@RequestMapping(method=RequestMethod.POST, value="/deleteLogin", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public List<Login> deleteLogin(@RequestBody Login login){
+		return loginService.deleteLogin(login);
+	}
+	
+	/**
+	 * Method to update a login object in the repository.
+	 * 
+	 * @param login The object to be updated
+	 * @return TRUE/FALSE
+	 */
+	@RequestMapping(method=RequestMethod.POST, value="/updateLogin", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public boolean updateLogin(@RequestBody Login login) {
+		return loginService.updateLogin(login);
+	}
+	
 }
