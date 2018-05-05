@@ -36,9 +36,9 @@ public class Restified {
 	}
 	
 	/**
-	 * Method to return all the customer objects from the database.
+	 * Method to return all the login objects from the database.
 	 * 
-	 * @return Customer The customer json object
+	 * @return List<Login> The login json object
 	 */
 	@RequestMapping(method=RequestMethod.GET, value= "/logins")
 	public List<Login> getLogins() {
