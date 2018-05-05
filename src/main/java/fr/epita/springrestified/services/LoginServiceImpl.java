@@ -64,15 +64,11 @@ public class LoginServiceImpl implements LoginService {
 	 * @see fr.epita.springrestified.services.LoginService#updateLogin(fr.epita.springrestified.datamodel.Login)
 	 */
 	public boolean updateLogin(Login login) {
-		
-		if(loginRepository.findById(login.getEmail()).isPresent()) {
+
+		if (loginRepository.findById(login.getEmail()).isPresent()) {
 			addLogin(login);
 			return true;
-		}else {
-			//TODO log and return false
-			return false;
 		}
-		
+		return false;
 	}
-
 }

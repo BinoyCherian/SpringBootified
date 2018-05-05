@@ -3,15 +3,14 @@ package fr.epita.springrestified.dao;
 import java.util.List;
 import java.util.Map.Entry;
 
-import javax.inject.Inject;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class GenericORMDao<T> {
 
-	@Inject
+	@Autowired
 	SessionFactory sf;
 	
 	public void create(T entity) {

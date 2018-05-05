@@ -20,7 +20,7 @@ import fr.epita.springrestified.services.LoginService;
  *
  */
 @RestController
-@RequestMapping(value="/Restified")
+@RequestMapping(value="/restified/login")
 public class Restified {
 	
 	/** The login service **/
