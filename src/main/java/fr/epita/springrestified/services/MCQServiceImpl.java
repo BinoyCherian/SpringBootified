@@ -6,6 +6,7 @@ package fr.epita.springrestified.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import fr.epita.springrestified.dao.MCQRepository;
 import fr.epita.springrestified.datamodel.MCQChoice;
@@ -17,6 +18,7 @@ import fr.epita.springrestified.datamodel.MCQChoice;
  * @author raaool
  *
  */
+@Service
 public class MCQServiceImpl implements MCQService {
 	
 	//TODO need to test all the service methods

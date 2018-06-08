@@ -6,6 +6,7 @@ package fr.epita.springrestified.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import fr.epita.springrestified.dao.QuestionRepository;
 import fr.epita.springrestified.datamodel.Question;
@@ -16,6 +17,7 @@ import fr.epita.springrestified.datamodel.Question;
  * @author raaool
  *
  */
+@Service
 public class QuestionServiceImpl implements QuestionService {
 	
 	/** The question repository */

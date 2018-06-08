@@ -3,12 +3,15 @@ package fr.epita.springrestified.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.epita.springrestified.configuration.ResponseEdo;
 import fr.epita.springrestified.datamodel.Login;
 import fr.epita.springrestified.services.LoginService;
 
@@ -41,9 +44,12 @@ public class Restified {
 	 * @return List<Login> The login json object
 	 */
 	@RequestMapping(method=RequestMethod.GET, value= "/logins")
-	public List<Login> getLogins() {
-		return loginService.getLogins();
+	@ResponseBody
+	public ResponseEdo getLogins() {
+		return new ResponseEdo<List<Login>>(loginService.getLogins(),HttpStatus.OK);
+	
 	}
+	
 	
 	/**
 	 * Method to check for login object in the repository.
@@ -51,9 +57,16 @@ public class Restified {
 	 * @param login The object to be checked
 	 * @return TRUE/FALSE
 	 */
-	@RequestMapping(method=RequestMethod.POST, value="/checkLogin" , consumes= MediaType.APPLICATION_JSON_VALUE)
-	public boolean checkLogin(@RequestBody Login login) {
-		return loginService.checkLogin(login);
+	@RequestMapping(method=RequestMethod.POST, value="/checklogin" , consumes= MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public ResponseEdo checkLogin(@RequestBody Login login) {
+		System.out.println("qwerty login: "+login.getEmail());
+		if( loginService.checkLogin(login)) {
+			return new ResponseEdo(null,HttpStatus.ACCEPTED); //TODO response design to be done
+		}
+		else {
+			return new ResponseEdo(null,HttpStatus.UNAUTHORIZED); //TODO same as above
+			}
 	}
 	
 	/**
@@ -63,8 +76,10 @@ public class Restified {
 	 * @return List<Login> The list of all the login objects
 	 */
 	@RequestMapping(method=RequestMethod.POST, value="/addLogin", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public List<Login> addLogin(@RequestBody Login login){
-		return loginService.addLogin(login);
+	public ResponseEdo addLogin(@RequestBody Login login){
+		
+		//TODO should i return all the objects or just the one that has been added along with the status
+		return new ResponseEdo(loginService.addLogin(login),HttpStatus.CREATED);
 	}
 
 	/**
@@ -87,5 +102,4 @@ public class Restified {
 	public boolean updateLogin(@RequestBody Login login) {
 		return loginService.updateLogin(login);
 	}
-	
 }

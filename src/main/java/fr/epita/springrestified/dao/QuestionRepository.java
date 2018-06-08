@@ -1,6 +1,7 @@
 package fr.epita.springrestified.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import fr.epita.springrestified.datamodel.Question;
 
@@ -10,6 +11,7 @@ import fr.epita.springrestified.datamodel.Question;
  * @author raaool
  *
  */
+@Repository
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
 
 }
