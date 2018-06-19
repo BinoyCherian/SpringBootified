@@ -21,8 +21,6 @@ import fr.epita.springrestified.datamodel.MCQChoice;
 @Service
 public class MCQServiceImpl implements MCQService {
 	
-	//TODO need to test all the service methods
-	
 	/** The mcq repository */
 	MCQRepository mcqRepository;
 	

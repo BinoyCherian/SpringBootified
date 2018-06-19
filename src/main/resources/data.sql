@@ -102,3 +102,12 @@ insert into LOGIN (email, password) values ('sbousfield2o@netscape.com', '0JXdsI
 insert into LOGIN (email, password) values ('gmesias2p@utexas.edu', 'mrx3qeJfJLl4');
 insert into LOGIN (email, password) values ('nhourican2q@theglobeandmail.com', '49EQ87Wg62');
 insert into LOGIN (email, password) values ('wcorke2r@etsy.com', 'ArMcXxk9');
+
+/* Loading the questions data into the question database*/
+
+insert into QUESTION(id,question, type) values (1,'Hi What is your problem', 0 ); 
+insert into QUESTION(id,question, type) values (2,'Hi What is your age', 1 ); 
+insert into QUESTION(id,question, type) values (3,'Hi What is your name', 2 ); 
+insert into QUESTION(id,question, type) values (4,'Hi What is your telephone number', 0 ); 
+insert into QUESTION(id,question, type) values (5,'Hi What is your address', 1 ); 
+insert into QUESTION(id,question, type) values (6,'Hi What is your girl friends name', 2 ); 

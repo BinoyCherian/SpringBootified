@@ -13,15 +13,10 @@ public abstract class GenericORMDao<T> {
 	@Autowired
 	SessionFactory sf;
 	
-	public void create(T entity) {
+	public void createOrUpdate(T entity) {
 		final Session session = sf.openSession();
 		session.saveOrUpdate(entity);
 
-	}
-
-	public void update(T entity) {
-		final Session session = sf.openSession();
-		session.saveOrUpdate(entity);
 	}
 
 	public void delete(T entity) {

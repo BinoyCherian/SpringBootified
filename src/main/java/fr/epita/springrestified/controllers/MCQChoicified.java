@@ -20,9 +20,10 @@ import fr.epita.springrestified.services.MCQService;
  *
  */
 @RestController
-@RequestMapping(value="/restified/mcquestion")
-public class MCQuestionified {
+@RequestMapping(value="/restified/mcqchoice")
+public class MCQChoicified {
 	
+	/** The mcq service */
 	final MCQService mcqService;
 	
 	/**
@@ -31,7 +32,7 @@ public class MCQuestionified {
 	 * @param mcqService The mcq service
 	 */
 	@Autowired
-	public MCQuestionified(MCQService mcqService) {
+	public MCQChoicified(MCQService mcqService) {
 		this.mcqService = mcqService;
 	}
 	
