@@ -34,7 +34,7 @@ public class LoginServiceImpl implements LoginService {
 	 * @see fr.epita.springrestified.services.LoginService#checkLogin(fr.epita.springrestified.datamodel.Login)
 	 */
 	public boolean checkLogin(Login login) {
-		return loginRepository.findById(login.getEmail()).isPresent();
+		return loginRepository.checkLogin(login.getEmail(), login.getPassword())>=1;
 	}
 	
 	/**
