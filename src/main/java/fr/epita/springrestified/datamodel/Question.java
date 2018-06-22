@@ -16,14 +16,14 @@ public class Question {
 
 	/** The id for the question */
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	/** The question */
 	private String question;
 	
 	/** The type of the question */
-	private QuestionType type;
+	private String type;
 
 	/**
 	 * The default constructor
@@ -56,7 +56,7 @@ public class Question {
 	 * 
 	 * @return the question type
 	 */
-	public QuestionType getType() {
+	public String getType() {
 		return type;
 	}
 
@@ -65,7 +65,7 @@ public class Question {
 	 * 
 	 * @param type the type
 	 */
-	public void setType(QuestionType type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 

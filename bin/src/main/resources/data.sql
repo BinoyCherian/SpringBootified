@@ -102,16 +102,3 @@ insert into LOGIN (email, password) values ('sbousfield2o@netscape.com', '0JXdsI
 insert into LOGIN (email, password) values ('gmesias2p@utexas.edu', 'mrx3qeJfJLl4');
 insert into LOGIN (email, password) values ('nhourican2q@theglobeandmail.com', '49EQ87Wg62');
 insert into LOGIN (email, password) values ('wcorke2r@etsy.com', 'ArMcXxk9');
-
-/* Loading the questions data into the question database*/
-
-insert into QUESTION(question, type) values ('Hi What is your problem', 'MCQ' ); 
-insert into QUESTION(question, type) values ('Hi What is your age', 'MCQ'); 
-insert into QUESTION(question, type) values ('Hi What is your name', 'MCQ'); 
-insert into QUESTION(question, type) values ('Hi What is your telephone number', 'MCQ' ); 
-insert into QUESTION(question, type) values ('Hi What is your address', 'MCQ' ); 
-insert into QUESTION(question, type) values ('Hi What is your girl friends name', 'MCQ' ); 
-
-insert into MCQCHOICE(choice, valid,question_id) values ('Hi What is your age',true,1 );
-insert into MCQCHOICE(choice, valid,question_id) values ('Hi What is your age',true,1 );
-insert into MCQCHOICE(choice, valid,question_id) values ('Hi What is your age',true,1 );

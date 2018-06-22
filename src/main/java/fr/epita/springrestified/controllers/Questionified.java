@@ -34,8 +34,8 @@ public class Questionified {
 	 * @return List<Question> The list of question json object
 	 */
 	@RequestMapping(method=RequestMethod.GET, value= "/questions")
-	public ResponseEdo getQuestion() {
-		return new ResponseEdo<List<Question>>(questionService.getQuestions(),HttpStatus.OK);
+	public List<Question> getQuestion() {
+		return (questionService.getQuestions());
 	}
 	
 	/**
@@ -45,8 +45,8 @@ public class Questionified {
 	 * @return List<Question> The list of all the question choice objects
 	 */
 	@RequestMapping(method=RequestMethod.POST, value="/addquestion", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEdo addQuestion(@RequestBody Question question){
-		return new ResponseEdo(questionService.addQuestion(question),HttpStatus.CREATED);
+	public boolean addQuestion(@RequestBody Question question){
+		return true;
 	}
 
 	/**

@@ -61,12 +61,12 @@ public class Restified {
 	 */
 	@RequestMapping(method=RequestMethod.POST, value="/checklogin" , consumes= MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public ResponseEdo checkLogin(@RequestBody Login login) {
+	public boolean checkLogin(@RequestBody Login login) {
 		if( loginService.checkLogin(login)) {
-			return new ResponseEdo(null,HttpStatus.ACCEPTED);
+			return true;
 		}
 		else {
-			return new ResponseEdo(null,HttpStatus.UNAUTHORIZED);
+			return false;
 			}
 	}
 	

@@ -54,7 +54,7 @@ public class TestQuestionServiceMethods {
 	public void testAddingAQuestionObject() {
 		
 		question.setQuestion("Does my question work");
-		question.setType(QuestionType.OPEN);
+		question.setType("OPEN");
 		questionService.addQuestion(question);
 		
 		assertTrue(questionService.getQuestions().contains(question));

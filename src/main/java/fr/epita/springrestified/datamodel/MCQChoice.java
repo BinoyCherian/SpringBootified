@@ -19,7 +19,7 @@ public class MCQChoice {
 
 	/** The id for the mcq choice */
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	/** The choice for the mcq choice */
@@ -28,10 +28,6 @@ public class MCQChoice {
 	
 	/** The valid answer for the mcqchoice */
 	private boolean valid;
-
-	/** The order of the mcq choice */
-	@Column(name = "MCQCHOICE_ORDER")
-	private int order;
 
 	/** The question for the mcqchoice */
 	@ManyToOne
@@ -78,24 +74,6 @@ public class MCQChoice {
 	 */
 	public void setValid(boolean valid) {
 		this.valid = valid;
-	}
-
-	/**
-	 * Gets the order
-	 * 
-	 * @return the order
-	 */
-	public int getOrder() {
-		return order;
-	}
-
-	/**
-	 * Sets the order
-	 * 
-	 * @param order the order
-	 */
-	public void setOrder(int order) {
-		this.order = order;
 	}
 
 	/**

@@ -1,6 +1,9 @@
 package fr.epita.springrestified.datamodel;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * The Enterprise object representing the question paper.
@@ -8,11 +11,14 @@ import javax.persistence.Entity;
  * @author raaool
  *
  */
-@Entity
 public class MCQAnswer {
 	
 	/** The exam **/
 	private Exam exam;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
 	/** The mcq choice **/
 	private MCQChoice mcqChoice;
@@ -51,6 +57,14 @@ public class MCQAnswer {
 	 */
 	public void setMcqChoice(MCQChoice mcqChoice) {
 		this.mcqChoice = mcqChoice;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }
