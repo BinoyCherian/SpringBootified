@@ -41,6 +41,7 @@ public class MCQChoice {
 	 * Default constructor
 	 */
 	public MCQChoice() {
+		//Default constructor
 	}
 
 	/**

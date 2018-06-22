@@ -31,7 +31,7 @@ public class Questionified {
 	 * 
 	 * @return List<Question> The list of question json object
 	 */
-	@RequestMapping(method=RequestMethod.GET, value= "/question")
+	@RequestMapping(method=RequestMethod.GET, value= "/questions")
 	public ResponseEdo getQuestion() {
 		return new ResponseEdo<List<Question>>(questionService.getQuestions(),HttpStatus.OK);
 	}

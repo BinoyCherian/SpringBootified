@@ -60,12 +60,11 @@ public class Restified {
 	@RequestMapping(method=RequestMethod.POST, value="/checklogin" , consumes= MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEdo checkLogin(@RequestBody Login login) {
-		System.out.println("qwerty login: "+login.getEmail());
 		if( loginService.checkLogin(login)) {
-			return new ResponseEdo(null,HttpStatus.ACCEPTED); //TODO response design to be done
+			return new ResponseEdo(null,HttpStatus.ACCEPTED);
 		}
 		else {
-			return new ResponseEdo(null,HttpStatus.UNAUTHORIZED); //TODO same as above
+			return new ResponseEdo(null,HttpStatus.UNAUTHORIZED);
 			}
 	}
 	
@@ -78,7 +77,6 @@ public class Restified {
 	@RequestMapping(method=RequestMethod.POST, value="/addLogin", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEdo addLogin(@RequestBody Login login){
 		
-		//TODO should i return all the objects or just the one that has been added along with the status
 		return new ResponseEdo(loginService.addLogin(login),HttpStatus.CREATED);
 	}
 

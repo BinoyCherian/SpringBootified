@@ -30,6 +30,7 @@ public class Question {
 	 * 
 	 */
 	public Question() {
+		//default constructor
 	}
 
 	/**
@@ -122,6 +123,7 @@ public class Question {
 			return false;
 		if (type != other.type)
 			return false;
+		
 		return true;
 	}
 }
